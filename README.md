@@ -26,8 +26,8 @@
 
 <ol>
 <li> WAP to find area of a circle, a rectangle and a triangle, using concept of function overloading.</li>
-<li> WAP to find volume of a sphere, a cylinder and a cuboid, using function overloading.
-WAP which displays a given character, n number of times, using a function. When the n value is not provided, it should print the given character 80 times. When both the character and n value is not provided, it should print ‘*’ character 80 times. Write the above program in two ways:-
+  <li> WAP to find volume of a sphere, a cylinder and a cuboid, using function overloading.</li>
+<li>WAP which displays a given character, n number of times, using a function. When the n value is not provided, it should print the given character 80 times. When both the character and n value is not provided, it should print ‘*’ character 80 times. Write the above program in two ways:-
   <ul>
   <li>using function overloading.</li>
   <li>using default arguments</li>
