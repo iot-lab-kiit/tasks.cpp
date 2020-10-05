@@ -1,36 +1,57 @@
-//WAP to find volume of a sphere, a cylinder and a cuboid, using function overloading.
-#include<bits/stdc++.h>
-    using namespace std;
-    float vol(float);
-    float vol1(int,int);
-    int vol2(int);
-    int main()
+#include <iostream>
+
+using namespace std;
+int volume(int rad)
+{
+    return((4/3)*3.14*rad*rad);
+}
+int volume(int a, int b, int c)
+{
+    return(a*b*c);
+}
+int volume(int x, int y)
+{
+    return(3.14*x*x*y);
+}
+
+
+int main()
+{
+    int ch;
+    cout<<"1. Sphere\n"<<"2. Cylinder\n"<<"3. Cuboid\n"<<"Enter your choice: ";
+    cin>>ch;
+    switch(ch)
     {
-        int r,h,a;
-        float r1;
-        //Enter radius of sphere: ";
-        cin>>r1;
-        //Enter radius and height of a cylinder:";
-        cin>>r>>h;
-        //Enter side of cube:";
-        cin>>a;
-         cout<<"\nVolume of sphere is "<<vol(r1)<<"\n";
-        cout<<"Volume of cylinder is "<<vol1(r,h)<<"\n";
-        cout<<"\nVolume of cube is "<<vol2(a)<<"\n";
-       
-        return 0;
-    }
-    float  vol(float r1)
-    {
-        return((4*3.14*r1*r1*r1)/3);
-    }
-    float vol1(int r,int h)
-    {
-        return(3.14*r*r*h);
+        case 1:
+        {
+            int n;
+            cout<<"\nEnter radius: ";
+            cin>>n;
+            cout<<"\nVolume of sphere: "<<volume(n);
+            break;
+        }
+        case 2:
+        {
+            int r,h;
+            cout<<"\nEnter radius and height: ";
+            cin>>r>>h;
+            cout<<"Volume of Cylinder: "<<volume(r,h);
+            break;
+        }
+        case 3:
+        {
+            int l,b,h;
+            cout<<"Enter length,breadth,height:";
+            cin>>l>>b>>h;
+            cout<<volume(l,b,h);
+            break;
+        }
+            
+        
     }
     
-    int vol2(int a)
-    {
-        return(a*a*a);
-    }
     
+    
+
+    return 0;
+}
