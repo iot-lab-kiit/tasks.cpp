@@ -1,67 +1,60 @@
-#include <iostream>
-
+#include<iostream>
 using namespace std;
-
-// class Shape with public data member finalarea to display Area of the shapes
-class Shape {
-    public:
-    float finalarea;
-};
-
-// class Circle inheriting Shape 
-class Circle : public Shape{
-    public:
-    int radius = 5;
-    
-    float area()
-    {
-        return 2*3.14*radius;
-    }
-};
-
-// class Rectangle inheriting Shape 
-class Rectangle : public Shape{
-    public:
-    int length = 5;
-    int breadth = 3;
-    
-    float area()
-    {
-        return length*breadth;
-    }
-};
-
-
-// class Triangle inheriting Shape 
-class Triangle : public Shape{
-    public:
-    int height = 5;
-    int base = 2;
-    
-    float area()
-    {
-        return .5*base*height;
-    }
-};
-
-
-int main()
+class Shape
 {
-    // Circle object
-    Circle circle;
-    //finalarea is member of Shape class but accessible by it's child class
-    circle.finalarea = circle.area();
-    cout<<"Area of Circle: "<<circle.finalarea<<endl;
+    public: double a,b,r;
+        void get_data1()
+        {
+            cin>>r;
+        }
+        void get_data2()
+        {
+            cin>>a>>b;
+        }
+       
+        virtual void display_area () = 0;
+};
+ class Circle:public Shape
+{
+    public: void display_area ()
+    {
+        cout<<"Area of Circle = "<<3.14*r*r<<endl;
+    }
+};
+class Triangle:public Shape
+{
+    public: void display_area ()
+    {
+        cout<<"Area of triangle = "<<0.5*a*b<<endl;
+    }
+};
+ 
+class Rectangle:public Shape
+{
+    public: void display_area ()
+    {
+        cout<<"Area of rectangle = "<<a*b<<endl;
+    }
+};
+ 
+int main()
+{   
+    Circle c;
+    Shape *sc = &c;
+    cout<<"Enter radius of the circle: ";
+    sc->get_data1();
+    sc->display_area();
     
-    //Triangle object
-    Triangle triangle;
-    triangle.finalarea = triangle.area();
-    cout<<"Area of Triangle: "<<triangle.finalarea<<endl;
-    
-    //Rectangle object
-    Rectangle rectangle;
-    rectangle.finalarea = rectangle.area();
-    cout<< "Area of Rectangle: "<<rectangle.finalarea;
-    
-    return 0;
+    Triangle t;
+    Shape *st = &t;
+    cout<<"Enter base and altitude: ";
+    st->get_data2();
+    st->display_area();
+     
+    Rectangle R;
+    Shape *sR = &R;
+    cout<<"Enter length and breadth: ";
+    sR->get_data2();
+    sR->display_area();
+    return 0;   
 }
