@@ -1,36 +1,39 @@
+//WAP to find area of a circle, a rectangle and a triangle, using concept of function overloading.
 #include<iostream>
-
+#include<math.h>
 using namespace std;
-
-int area(int,int);
-float area(float);
-float area(float,float);
-
-int main()
-{
-        int l,b;
-        float r,bs,ht;
-        cout<<"Enter length and breadth of rectangle:";
-        cin>>l>>b;
-        cout<<"Enter radius of circle:";
-        cin>>r;
-        cout<<"Enter base and height of triangle:";
-        cin>>bs>>ht;
-        cout<<"\nArea of rectangle is "<<area(l,b);
-        cout<<"\nArea of circle is "<<area(r);
-        cout<<"\nArea of triangle is "<<area(bs,ht);
-}
-
-int area(int l,int b)
-{
-    return(l*b);
-}
+//Area of circle
 float area(float r)
 {
-    return(3.14*r*r);
+    float ret=3.14*pow(r,2);
+    return ret;
 }
-float area(float bs,float ht)
+//Area of the rectangle
+float area(float l,float b)
 {
-   return((bs*ht)/2);
+    float ret=l*b;
+    return ret;
+}
+//Area of the triangle
+float area(float s1,float s2,float s3)
+{
+    float t=(s1+s2+s3)/2;
+    float ret=sqrt(t*(t-s1)*(t-s2)*(t-s3));
+    return ret;
+}
+int main()
+{
+    float r,l,b,s1,s2,s3,ac,ab,at;
+    cout<<"Enter the radius of the circle"<<endl;
+    cin>>r;
+    cout<<"The area of the circle is"<<area(r)<<endl;
+    cout<<"Enter the length and breadth of the rectangle"<<endl;
+    cin>>l>>b;
+    cout<<"The area of the rectangle is"<<area(l,b)<<endl;
+    cout<<"Enter the sides of the triangle"<<endl;
+    cin>>s1>>s2>>s3;
+    cout<<"The area of the triangle is"<<area(s1,s2,s3)<<endl;
+    return 0;
+
 }
 
