@@ -1,0 +1,77 @@
+//=================call by value=============================
+#include<iostram>
+using namespace std;
+void swap(int a,int b)
+{
+  int temp;
+  temp=a;
+  a=b;
+  b=temp;
+  
+  //number after swaping
+  cout<<a<<b;
+}
+
+int main()
+{
+  int a=5,b=6;
+  //no.before swap
+  cout<<a<<b;
+  
+  //no. after swap
+   cout<<a<<b;
+   
+   //in this case there is no change in the number because we just pass the value to function 
+}
+
+//================call by reference===========================
+#include<iostream>
+using namespace std;
+void swap (int &num1, int &num2) 
+{
+        int temp;
+        temp=num1;
+        num1=num2;
+        num2=temp;
+}
+int main()
+{
+        int a=5,b=10;
+        cout<<"\n Before swapping"<<"\n A = "<<a<<"\n B = "<<b<<endl;
+        swap(a,b);
+        cout<<"\n After swapping"<<"\n A = "<<a<<"\n B = "<<b<<endl;
+        return 0;
+        
+} 
+
+//==================call by address=========
+#include <iostream>
+using namespace std;
+ 
+
+void swap(int *a, int *b)
+{
+   int temp;
+ 
+   temp = *b;
+   *b = *a;
+   *a = temp;   
+}
+
+int main()
+{
+   int x, y;
+ 
+   cout<<"Enter the value of x and y<<"\n;
+   cin>>x>>y;
+ 
+   cout<<"Before Swapping"<<" "<<x<<" "<<y<<"\n";
+   
+   //pass by address
+   swap(&x, &y); 
+ 
+   cout<<"after swapping"<<" "<<"x="<<x<<" "<<"y="<<y<<"\n;
+ 
+   return 0;
+}
+ 
