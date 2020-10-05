@@ -28,14 +28,3 @@ float area(float base,float height)
 {
    return((base*height)/2);
 }
-
-If i took the input as
-radius of circle:2
-length of rectangle:4 breath of rectangle:5
- base of triangle:2 height of triangle:3
- 
- 
- #output shown as
-Area of circle is 12.56
-Area of rectangle is 20
-Area of triangle is 3
