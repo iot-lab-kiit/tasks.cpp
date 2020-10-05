@@ -34,13 +34,3 @@
         return(a*a*a);
     }
     
-    
-   //input example
-  radius of sphere: 2
- radius of cyclinder4 height  of cyclinder: 5
- side of cube:2
- 
- #output for this example we got
- Volume of sphere is 33.4933
- Volume of cylinder is 251.2
- Volume of cuboid is 8
