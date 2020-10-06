@@ -3,10 +3,9 @@
 using namespace std;
 void swap(int a,int b)
 {
-  int temp;
-  temp=a;
-  a=b;
-  b=temp;
+  a=a+b;
+  b=a-b;
+  a=a-b;
   
   //number after swaping
   cout<<a<<b;

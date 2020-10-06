@@ -9,22 +9,23 @@ n value is not provided, it should print ‘*’ character 80 times.
 
 using namespace std;
 
-void displayChar(int n = 80, char ch = '*')
-{
-    for (int i = 0; i < n; i++)
-    {
-        cout << ch << " ";
-    }
-    cout << endl;
+void dispChar(int =80, char ='*'); 
+
+
+int main() 
+{ 
+        int n;
+        char ch;
+        cin>>n>>ch;         
+        dispChar();
+        dispChar(n,ch);
+        
+	return 0; 
 }
 
-int main()
+void dispChar(int j,char c)
 {
-    int n;
-    char ch;
-    cin >> n >> ch;
-
-    displayChar(n, ch);
-
-    return 0;
-}
+ 
+ for(int i=0;i<j;i++)
+ cout<<c<<"\t";
+} 
