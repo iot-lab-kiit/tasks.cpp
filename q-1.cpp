@@ -2,35 +2,88 @@
 
 using namespace std;
 
-int area(int,int);
-float area(float);
+//Function prototying for the function area.
+
+float area(int);
+
+float area(int,int);
+
 float area(float,float);
+
+//defining the area function.
+
+//circle
+
+float area(int r)
+{
+        return(3.14 * r * r);
+}
+
+//Triangle
+
+float area(int b,int h)
+{
+        return(0.5 * b * h);
+}
+
+//Rectangle
+
+float area(float l,float b)
+{
+        return (l * b);
+}
 
 int main()
 {
-        int l,b;
-        float r,bs,ht;
-        cout<<"Enter length and breadth of rectangle:";
-        cin>>l>>b;
-        cout<<"Enter radius of circle:";
-        cin>>r;
-        cout<<"Enter base and height of triangle:";
-        cin>>bs>>ht;
-        cout<<"\nArea of rectangle is "<<area(l,b);
-        cout<<"\nArea of circle is "<<area(r);
-        cout<<"\nArea of triangle is "<<area(bs,ht);
-}
+        float b,h,r,l;
+        int ch;
 
-int area(int l,int b)
-{
-    return(l*b);
-}
-float area(float r)
-{
-    return(3.14*r*r);
-}
-float area(float bs,float ht)
-{
-   return((bs*ht)/2);
-}
+        do
+        {
+                cout<<"\n Enter.. to find  \n";
 
+                cout<<"\n 1. Area of Circle";
+                cout<<"\n 2. Area of Triangle";
+                cout<<"\n 3. Area of Rectangle";
+
+                cout<<"\n 4. Exit from the program ";
+
+                cout<<"\n\n Enter Your Choice : ";
+                cin>>ch;
+                switch(ch)
+                {
+                        case 1:
+                        {
+                                cout<<"\n enter the radius for circle: ";
+                                cin>>r;
+                                cout<<"\n area of circle is : "<<area(r);
+                                break;
+                        }
+
+
+                        case 2:
+                        {
+                                cout<<"\n enter the base & height of triangle : ";
+                                cin>>b>>h;
+                                cout<<"\n area of triangle is : "<<area(b,h);
+                                break;
+                        }
+
+                        case 3:
+                        {
+                                cout<<"\n enter the length & bredth of rectangle : ";
+                                cin>>l>>b;
+                                cout<<"\n Area of rectangle : "<<area(l,b);
+                                break;
+                        }
+
+                        case 4:
+                                exit(0);
+                        default:
+                                cout<<"\n enter a valid choice ";
+                }
+                
+        }while(ch!=4);
+
+        return 0;
+}
