@@ -1,8 +1,4 @@
 
-Aditya Srivastava <abdaditya@gmail.com>
-Fri, Feb 21, 9:14 PM
-to me
-
 #include<iostream>
 #include<math.h>
 using namespace std;
