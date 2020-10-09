@@ -13,14 +13,14 @@ class complex
     complex ADD(complex s2)   
     {
         complex sum;
-        sum.real=real+s2.real;
-        sum.img=img+s2.img;
+        sum.real=real+s2.real; //addition of the real part
+        sum.img=img+s2.img; //addition of the imaginary part
         return sum;
     }
     complex ADD(int a)
     {
         complex sum;
-        sum.real=a+real;
+        sum.real=a+real; //addition of the real numbers
         sum.img=img;
         return sum;
     }
@@ -43,11 +43,11 @@ int main()
     cout<<"Enter img part"<<endl;
     cin>>s2.img;
     cout<<"Sum of integer and complex"<<endl;
-    sum=s1.ADD(a);                              //Calling the overloaded function
-    cout<<sum.real<<" "<<sum.img<<endl;
+    sum=s1.ADD(a);                              //Calling the overloaded function ADD
+    cout<<sum.real<<" +i"<<sum.img<<endl;
     cout<<"Sum of two complex no."<<endl;
-    sum=s1.ADD(s2);                             //Calling the overloaded function
-    cout<<sum.real<<" "<<sum.img<<endl;
+    sum=s1.ADD(s2);                             //Calling the overloaded function ADD
+    cout<<sum.real<<" +i"<<sum.img<<endl;
     return 0;
 
 }
