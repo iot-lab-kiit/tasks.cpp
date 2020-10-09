@@ -83,6 +83,7 @@ float area(float s1,float s2,float s3)
 }
 int main()
 {
+
     float r,l,b,s1,s2,s3,ac,ab,at;
     cout<<"Enter the radius of the circle"<<endl;
     cin>>r;
@@ -125,3 +126,42 @@ int main()
 
         return 0;
 }
+=======
+    int ch;
+    while(1){
+    cout<<"\n 1. Area of circle \n"<<"2. Area of reactangle\n"<<"3. Area of triangle\n"<<"Enter your choice: ";
+    cin>>ch;
+    switch(ch)
+    {
+        case 1:
+        {
+            float n;
+            cout<<"\nEnter radius: ";
+            cin>>n;
+            cout<<"\nArea of sphere: "<<area(n);
+            break;
+        }
+        case 2:
+        {
+            float l,b ;
+            cout<<"\nEnter length and bredth of the rectangle: ";
+            cin>>l>>b;
+            cout<<"Area of Rectangle: "<<area(l,b);
+            break;
+        }
+        case 3:
+        {
+            float s1,s2,s3;
+            cout<<"Enter sides of triangle:";
+            cin>>s1>>s2>>s3;
+            cout<<area(s1,s2,s3);
+            break;
+        }
+        default:
+        cout<<"Invalid Input";
+        
+    }
+    }
+return 0;
+}
+
