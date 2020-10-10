@@ -1,25 +1,28 @@
-/*
-    WAP to find square and cube of a number using inline function.
-*/
+/* WAP to find square and cube of a number using inline function.*/
 
 #include<iostream>
-using namespace std;
+using namespace std; 
 
-inline int square(int n){
-    return n*n;
+
+//Inline function to find the cube of the number
+inline int cube(int s) 
+{ 
+    return s*s*s; 
 }
 
-inline int cube(int n){
-    return n*n*n;
-}
 
-int main(){
-    int number;
-    cout<<"Number: ";
-    cin>>number;
+//Inline function to find the square of the number
+inline int square(int s)
+{ 
+    return s*s; 
+} 
 
-    cout<<"Square of "<<number<<" is "<<square(number)<<endl;
-    cout<<"Cube of "<<number<<" is "<<cube(number)<<endl;
-
-    return 0;
+int main() 
+{ 
+    int s;
+    cout<<"Enter the number to find the square amd cube\n";
+    cin>>s;
+    cout << "The cube of the number is:\n " << cube(s) << "\n"; 
+    cout<<"The square of the number is:\n"<< square(s)<<"\n";
+    return 0; 
 }
