@@ -1,57 +1,59 @@
 #include <iostream>
 
 using namespace std;
-int volume(int rad)
+
+void volume(float r)
 {
-    return((4/3)*3.14*rad*rad);
-}
-int volume(int a, int b, int c)
-{
-    return(a*b*c);
-}
-int volume(int x, int y)
-{
-    return(3.14*x*x*y);
+    cout<<"\nThe volume of Sphere: "<<((4*22*r*r*r)/(7*3))<<"\n";
 }
 
+void volume(float l, float b, float h)
+{
+    cout<<"\nThe volume of the Cuboid: "<<((l*b*h));
+}
+
+void volume(float r, float h)
+{
+    cout<<"Volume of Cylinder: "<<((22*r*r*h)/7)<<"\n";
+}
 
 int main()
 {
-    int ch;
-    cout<<"1. Sphere\n"<<"2. Cylinder\n"<<"3. Cuboid\n"<<"Enter your choice: ";
-    cin>>ch;
-    switch(ch)
+    int n;
+    cout<<"1. Sphere\n2. Cylinder\n3. Cuboid\nEnter your choice: ";
+    cin>>n;
+    switch(n)
     {
         case 1:
-        {
-            int n;
-            cout<<"\nEnter radius: ";
-            cin>>n;
-            cout<<"\nVolume of sphere: "<<volume(n);
-            break;
-        }
+            {
+                float r;
+                cout<<"\nEnter radius of the sphere: ";
+                cin>>r;
+                volume(r);
+                break;
+            }
+
         case 2:
-        {
-            int r,h;
-            cout<<"\nEnter radius and height: ";
-            cin>>r>>h;
-            cout<<"Volume of Cylinder: "<<volume(r,h);
-            break;
-        }
+            {
+                float r,h;
+                cout<<"\nEnter radius and height of the cylinder: ";
+                cin>>r>>h;
+                volume(r,h);
+                break;
+            }
+
         case 3:
-        {
-            int l,b,h;
-            cout<<"Enter length,breadth,height:";
-            cin>>l>>b>>h;
-            cout<<volume(l,b,h);
-            break;
-        }
-            
-        
+            {
+                float l,b,h;
+                cout<<"\nEnter length, breadth and height of the cuboid: ";
+                cin>>l>>b>>h;
+                volume(l,b,h);
+                break;
+            }
+
+        default:
+            cout<<"Please Try Again!\n";
     }
-    
-    
-    
 
     return 0;
 }
