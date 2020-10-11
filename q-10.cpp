@@ -1,102 +1,86 @@
-/*Create a class which stores employee name,id and salary Derive two classes from ‘Employee’ class: ‘Regular’ and ‘Part-Time’.
-     The ‘Regular’ class stores DA, HRA and basic salary. The ‘Part-Time’ class stores the number of hours and pay.*/
+/*Create a class which stores employee name,id and salary Derive two classes from
+â€˜Employeeâ€™ class: â€˜Regularâ€™ and â€˜Part-Timeâ€™. The â€˜Regularâ€™ class stores DA, HRA and
+basic salary. The â€˜Part-Timeâ€™ class stores the number of hours and pay.*/
+
+
 
 #include<iostream>
-
 using namespace std;
-
-class employee
-{
-protected:
-    char name[50];
-    int id;
-    float sal;
-public:
-    void input();
+class employee{
+	protected:
+		char name[20];
+		int id,hr,pay_per_hr;
+		float basic,hra,da;
+		public:
+			void input();
 };
 
-class regular: public employee
-{
-    float da, hra, basic;
-    void calculate()
-    {
-        da = 0.75*sal;
-        hra = 0.25* sal;
-        basic = sal + da + hra;
-    }
-public:
-    void display();
-}re;
+//General input function
 
-class part_time: public employee
-{
-    int hr;
-    float pay;
-    void calculate()
-    {
-        pay = sal/730 * hr;
-    }
-public:
-    void input_hr();
-    void display();
-}pe;
 
-void employee :: input()
+void employee::input()
 {
-    cout<<"Enter the name of the employee: ";
-    cin.ignore();
-    cin.getline(name,50);
-    cout<<"Enter the id of the employee: ";
-    cin>>id;
-    cout<<"Enter the Salary: ";
-    cin>>sal;
+	cout<<"Enter name : ";
+	cin>>name;
+	cout<<"Enter id : ";
+	cin>>id;
 }
 
-void regular :: display()
-{
-    calculate();
-    cout<<"\nThe name of the employee: "<<name;
-    cout<<"\nThe id of the employee: "<<id;
-    cout<<"\nThe Salary: "<<sal;
-    cout<<"\nThe Basic Salary: "<<basic;
-}
+//Regular class derieved from the employee class
 
-void part_time :: display()
-{
-    calculate();
-    cout<<"\nThe name of the employee: "<<name;
-    cout<<"\nThe id of the employee: "<<id;
-    cout<<"\nThe Salary: "<<sal;
-    cout<<"\nThe number of hours worked: "<<hr;
-    cout<<"\nThe Pay: "<<pay;
-}
 
-void part_time :: input_hr()
+class regular:public employee
 {
-    cout<<"Enter the number of hours worked hours worked: ";
-    cin>> hr;
-}
+	public:
+		void in_regular()
+		{
+			cout<<"Enter the basic salary : ";
+			cin>>basic;
+			cout<<"Enter HRA : ";
+			cin>>hra;
+			cout<<"Enter DA : ";
+			cin>>da;
+		}
+		int calculate()
+		{
+			float gross1;
+			gross1=basic+hra+da;
+			return(gross1);
+		}
+};
+//Part time  class derieved from the employee class
 
+
+class part_time:public employee
+{
+	public:
+		float gross2;
+		void in_part()
+		{
+			cout<<"Enter pay per hr : ";
+			cin>>pay_per_hr;
+			cout<<"Enter working time(in hr) : ";
+			cin>>hr;
+		}
+		int calculate_per_hr()
+		{
+			gross2=pay_per_hr*hr;
+			return(gross2);
+		}
+};
 int main()
 {
-    int n;
-    cout<<"Enter the type of employee\n1. Regular\n2. Part Time\nChoose one option: ";
-    cin>>n;
-    switch(n)
-    {
-    case 1:
-                    re.input();
-                    re.display();
-                    break;
-
-    case 2:
-                    pe.input();
-                    pe.input_hr();
-                    pe.display();
-                    break;
-
-    default:
-                    cout<<"Please try again\n";
-    }
-    return 0;
+	class regular r1;
+	r1.input();
+	r1.in_regular();
+	cout<<"\n\n";
+	cout<<"Regular employee salary = "<<r1.calculate()<<endl;
+	cout<<"\n\n\n\n";
+	class part_time p;
+	p.input();
+	p.in_part();
+	cout<<"\n\n";
+	cout<<"The salary per hr of the part time employee = "<<p.calculate_per_hr()<<endl;
+	cout<<"\n\n\n\n";
+	return 0;
 }
