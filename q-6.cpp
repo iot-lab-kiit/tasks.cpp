@@ -34,7 +34,7 @@ complex complex::add(complex s1, complex s2)
 
 void complex::display()
 {
-    cout<<real<<" + i"<<imag<<endl;
+    cout<<real<<"+i"<<imag<<endl;
 }
 
 int main()
