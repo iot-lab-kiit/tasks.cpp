@@ -10,11 +10,11 @@ int main()
 {
         int l,b;
         float r,bs,ht;
-        cout<<"Enter length and breadth of rectangle:";
+        cout<<"Enter length and breadth of rectangle:"<<endl;
         cin>>l>>b;
-        cout<<"Enter radius of circle:";
+        cout<<"Enter radius of circle:"<<endl;
         cin>>r;
-        cout<<"Enter base and height of triangle:";
+        cout<<"Enter base and height of triangle:"<<endl;
         cin>>bs>>ht;
         cout<<"\nArea of rectangle is "<<area(l,b);
         cout<<"\nArea of circle is "<<area(r);
@@ -31,6 +31,6 @@ float area(float r)
 }
 float area(float bs,float ht)
 {
-   return((bs*ht)/2);
+   return((bs*ht)/2.0);
 }
 
