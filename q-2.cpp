@@ -1,22 +1,9 @@
-
-
-#include<iostream>
+//WAP to find the volume of a sphere,Cylinder and a Cuboid using the function overloading concept
+#include <iostream>
 
 using namespace std;
+int volume(int rad)            //this function returns the VOLUME of SPHERE
 
-//Function prototying for the function area.
-
-float volume(int);
-
-float volume(int,int);
-
-float volume(float,float,float);
-
-//defining the area function.
-
-//sphere
-
-float volume(int r1)
 {
        return((4*3.14*r1*r1*r1)/3);
 }
@@ -24,7 +11,7 @@ float volume(int r1)
 //cylinder
 
 float volume(int r,int h)
-{
+
         return(3.14*r*r*h);
 }
 
@@ -34,7 +21,6 @@ float volume(float l,float w,float h)
 {
         return (l*w*h);
 }
-
 int main()
 {
         float r,h,l,w;
@@ -90,4 +76,4 @@ int main()
         return 0;
 }
 
-//this is a proper menu driven program.
+
