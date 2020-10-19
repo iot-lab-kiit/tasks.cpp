@@ -18,7 +18,17 @@ float area(float,float);
 
 float area(int r)
 {
-        return(3.14 * r * r);
+        int l,b;
+        float r,bs,ht;
+        cout<<"Enter length and breadth of rectangle:"<<endl;
+        cin>>l>>b;
+        cout<<"Enter radius of circle:"<<endl;
+        cin>>r;
+        cout<<"Enter base and height of triangle:"<<endl;
+        cin>>bs>>ht;
+        cout<<"\nArea of rectangle is "<<area(l,b);
+        cout<<"\nArea of circle is "<<area(r);
+        cout<<"\nArea of triangle is "<<area(bs,ht);
 }
 
 //Triangle
@@ -37,30 +47,8 @@ float area(float l,float b)
 
 int main()
 {
-        float b,h,r,l;
-        int ch;
-
-        do
-        {
-                cout<<"\n Enter.. to find  \n";
-
-                cout<<"\n 1. Area of Circle";
-                cout<<"\n 2. Area of Triangle";
-                cout<<"\n 3. Area of Rectangle";
-
-                cout<<"\n 4. Exit from the program ";
-
-                cout<<"\n\n Enter Your Choice : ";
-                cin>>ch;
-                switch(ch)
-                {
-                        case 1:
-                        {
-                                cout<<"\n enter the radius for circle: ";
-                                cin>>r;
-                                cout<<"\n area of circle is : "<<area(r);
-                                break;
-                        }
+   return((bs*ht)/2.0);
+}
 
 
                         case 2:
