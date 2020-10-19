@@ -1,0 +1,63 @@
+//create a class called COMPLEX and implement the following overloading functions ADD that return a COMPLEX number.
+//ADD (a , s2) - where a is an integer (real part) and s2 is a complex number.
+//ADD (s1, s2) - where s1 and s2 are complex numbers.
+
+#include<iostream>
+using namespace std;
+
+class complex
+{
+    int real;
+    int imag;
+public:
+    complex(){}
+    complex(int, int);
+    friend complex add(complex, complex);
+    friend complex add(int, complex);
+    void display();
+};
+
+complex::complex(int r, int i)
+{
+    real=r;
+    imag=i;
+}
+
+complex add(int a, complex s2)
+{
+    complex temp;
+    temp.real=s2.real+a;
+    temp.imag=s2.imag;
+    return temp;
+}
+
+complex add(complex s1, complex s2)
+{
+    complex temp;
+    temp.real=s1.real+s2.real;
+    temp.imag=s1.imag+s2.imag;
+    return temp;
+}
+
+
+void complex::display()
+{
+    cout<<real<<" + i"<<imag<<endl;
+}
+
+int main()
+{
+    complex s1(5, 6);
+    complex s2(8, 3);
+    complex s3, s4;
+    int a;
+    cout<<"enter an integer value:"<<endl;
+    cin>>a;
+    s3=add(a, s2);
+    cout<<"on adding integer value:"<<endl;
+    s3.display();
+
+    s4=add(s1, s2);
+    cout<<"on adding the two numebers:"<<endl;
+    s4.display();
+}
