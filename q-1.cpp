@@ -1,12 +1,22 @@
+//WAP to find area of a circle, a rectangle and a triangle, using concept of function overloading.
+
 #include<iostream>
 
 using namespace std;
 
-int area(int,int);
-float area(float);
+//Function prototying for the function area.
+
+float area(int);
+
+float area(int,int);
+
 float area(float,float);
 
-int main()
+//defining the area function.
+
+//circle
+
+float area(int r)
 {
         int l,b;
         float r,bs,ht;
@@ -21,16 +31,49 @@ int main()
         cout<<"\nArea of triangle is "<<area(bs,ht);
 }
 
-int area(int l,int b)
+//Triangle
+
+float area(int b,int h)
 {
-    return(l*b);
+        return(0.5 * b * h);
 }
-float area(float r)
+
+//Rectangle
+
+float area(float l,float b)
 {
-    return(3.14*r*r);
+        return (l * b);
 }
-float area(float bs,float ht)
+
+int main()
 {
    return((bs*ht)/2.0);
 }
 
+
+                        case 2:
+                        {
+                                cout<<"\n enter the base & height of triangle : ";
+                                cin>>b>>h;
+                                cout<<"\n area of triangle is : "<<area(b,h);
+                                break;
+                        }
+
+                        case 3:
+                        {
+                                cout<<"\n enter the length & bredth of rectangle : ";
+                                cin>>l>>b;
+                                cout<<"\n Area of rectangle : "<<area(l,b);
+                                break;
+                        }
+
+                        case 4:
+                                exit(0);
+                        default:
+                                cout<<"\n enter a valid choice ";
+                }
+                
+        }while(ch!=4);
+
+        return 0;
+}
