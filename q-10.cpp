@@ -5,108 +5,100 @@ basic salary. The ‘Part-Time’ class stores the number of hours and pay.*/
 
 //Above program is implemented using constructor
 #include<iostream>
-#include<string.h>
+
+#include<string>
 using namespace std;
-//class employee with id name and salary
-class employee
-{
-    protected:
-    int id;
-    char name[10];
-    float salary;
-    public:
-     employee(int i,char *n,float sal)
-     {
-         id=i;
-         strcpy(name,n);
-         salary=sal;
-     }
-     //Function to display
-     void display()
-     {
-         cout<<"Id of the employee is:"<<id<<endl;
-         cout<<"Name of the employee is:"<<name;
-     }
-     ~employee()
-     {}
+class employee {
+protected:
+	string name;
+	int id;
+	float salary;
+public:
+	void input();
+	void display();
 };
-//regular is the child class of employee
-class regular:public employee
+
+//General input function
+
+
+void employee::input()
 {
-    float DA;
-    float HRA;
-    float b_salary;
-    public:
-     regular(int i,char *n,float sal,float da,float hra,float b_sal):employee(i,n,sal)
-     {
-         DA=da;
-         HRA=hra;
-         b_salary=b_sal;
-     }
-     void calc()
-     {
-        salary=DA+HRA+b_salary;
-     }
-     void display()
-     {
-         cout<<"The salary of the regular emplayee is:"<<salary<<endl;;
-     }
-     ~regular()
-     {}
+	cout << "Enter name : ";
+	cin.ignore();
+	getline(cin, name);
+
+	cout << "Enter id : ";
+	cin >> id;
+}
+
+
+//display function
+
+void employee::display()
+{
+	cout << salary << endl;
+	return;
+}
+
+//Regular class derieved from the employee class
+
+
+class regular :public employee
+{
+	float basic, hra, da;
+public:
+	void in_regular()
+	{
+		cout << "Enter the basic salary : ";
+		cin >> basic;
+		cout << "Enter HRA : ";
+		cin >> hra;
+		cout << "Enter DA : ";
+		cin >> da;
+	}
+	void calculate()
+	{
+		salary = basic + hra + da;
+		return;
+	}
 };
-//part_time is the child class of employee with public mode of inheritance
-class part_time:public employee
+//Part time  class derieved from the employee class
+
+
+class part_time :public employee
 {
-    int hr;
-    float p_perhr;
-    public:
-     part_time(int i,char *n,float sal,int h,float p):employee(i,n,sal)
-     {
-         hr=h;
-         p_perhr=p;
-     }
-     void calc()
-     {
-         salary=p_perhr*hr;
-     }
-     void display()
-     {
-         cout<<"EXtra hour of the employee is:"<<hr<<endl;
-         cout<<"salary  of the employee is:"<<salary<<endl;;
-     }
-     ~part_time()
-     {}
+	float hr, pay_per_hr;
+public:
+	void in_part()
+	{
+		cout << "Enter pay per hr : ";
+		cin >> pay_per_hr;
+		cout << "Enter working time(in hr) : ";
+		cin >> hr;
+	}
+	void calculate_per_hr()
+	{
+		salary = pay_per_hr * hr;
+		return;
+	}
+
 };
 //Here all the necessary inputs are taken and constructor of class is called for assigning values
 int main()
 {
-    int i;
-    char n[10];
-    float sal,p,da,hra,b_sal;
-    int h;
-    cout<<"Enter the id of the employee"<<endl;
-    cin>>i;
-    cout<<"Enter the name of the employee:"<<endl;
-    cin>>n;
-    cout<<"Enter the DA of the employee"<<endl;
-    cin>>da;
-    cout<<"Enter the HRA of the employee:"<<endl;
-    cin>>hra;
-    cout<<"Enter the b_salary of the employee:"<<endl;
-    cin>>b_sal;
-    cout<<"Enter the extrahour of the employee"<<endl;
-    cin>>h;
-    cout<<"Enter the pay per hour (salary) of the employee:"<<endl;
-    cin>>p;
-    regular r(i,n,sal,da,hra,b_sal);
-    part_time pa(i,n,sal,h,p);
-    r.calc();
-    pa.calc();
-    cout<<"Displaying for employee:"<<endl;
-    r.employee::display();
-    cout<<"\n\nDisplaying for regular employee->"<<endl;
-    r.display();
-    cout<<"\nDisplaying for parttime employee->"<<endl;
-    pa.display();
-    return 0;
+	class regular r1;
+	r1.input();
+	r1.in_regular();
+	r1.calculate();
+	cout << "\n\n";
+	cout << "Regular employee salary = "; r1.display();
+	class part_time p;
+	p.input();
+	p.in_part();
+	p.calculate_per_hr();
+	cout << "\n\n";
+	cout << "The salary per hr of the part time employee = "; p.display();
+	cout << "\n\n\n\n";
+	return 0;
+
 }
