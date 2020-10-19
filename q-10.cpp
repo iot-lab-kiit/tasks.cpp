@@ -3,8 +3,9 @@
 basic salary. The ‘Part-Time’ class stores the number of hours and pay.*/
 
 
-
+//Above program is implemented using constructor
 #include<iostream>
+
 #include<string>
 using namespace std;
 class employee {
@@ -80,7 +81,9 @@ public:
 		salary = pay_per_hr * hr;
 		return;
 	}
+
 };
+//Here all the necessary inputs are taken and constructor of class is called for assigning values
 int main()
 {
 	class regular r1;
@@ -97,4 +100,5 @@ int main()
 	cout << "The salary per hr of the part time employee = "; p.display();
 	cout << "\n\n\n\n";
 	return 0;
+
 }
