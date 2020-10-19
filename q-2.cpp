@@ -3,72 +3,77 @@
 
 using namespace std;
 int volume(int rad)            //this function returns the VOLUME of SPHERE
+
 {
-    return((4/3)*3.14*rad*rad);
-}
-int volume(int a, int b, int c)   //this function returns the VOLUME of CUBOID
-{
-    return(a*b*c);
-}
-int volume(int x, int y)          //this function returns the VOLUME of CYLINDER
-{
-    return(3.14*x*x*y);
+       return((4*3.14*r1*r1*r1)/3);
 }
 
+//cylinder
 
-int main()                       //main function
+float volume(int r,int h)
+
+        return(3.14*r*r*h);
+}
+
+//cuboid
+
+float volume(float l,float w,float h)
 {
-    int ch;
-    cout<<"Please enter your choice as(1,2,3)"<<endl;
-    cout<<"1. Sphere\n"<<"2. Cylinder\n"<<"3. Cuboid\n";
-    cout<<"Enter your choice: ";
+        return (l*w*h);
+}
+int main()
+{
+        float r,h,l,w;
+        int ch;
 
-    cin>>ch;
-    switch(ch)
-    {
-        case 1:                        //case for calculating the volume of sphere
+        do
         {
-            int r;
-            cout<<"\nEnter radius: ";
-            cin>>r;
-            cout<<"\nVolume of sphere: "<<volume(r);
-            break;
-        }
-        case 2:                                        //case for calculating the Volume of CYLINDER
-        {
-            int r,h;
-            cout<<"\nEnter radius of the Cylinder: ";
-            cin>>r;
-            cout<<"Enter Height of the Cylinder: ";
-            cin>>h;
-            cout<<"Volume of Cylinder: "<<volume(r,h);
-            break;
-        }
-        case 3:                                               //case for calculating the Volume of Cuboid
-        {
-            int l,b,h;
-            cout<<"Enter length of the Cuboid: ";
-            cin>>l;
-            cout<<"Enter breadth of the Cuboid: ";
-            cin>>b;
-            cout<<"Enter height of the Cuboid: ";
-            cin>>h;
-            cout<<"Volume of the Cuboid: "<<volume(l,b,h);
-            break;
-        }
-        default:                                                    //default case used in case the user enters options other than 1,2,3
-            {
-                cout<<"Sorry! you entered a wrong choice"<<endl;
-                cout<<"Please run the program again."<<endl;
-                cout<<"Thank you"<<endl;
-                break;
-            }
+                cout<<"\n Enter.. to find  \n";
+
+                cout<<"\n 1. volume of sphere";
+                cout<<"\n 2. volume of cylinder";
+                cout<<"\n 3. volume of cube";
+
+                cout<<"\n 4. Exit from the program ";
+
+                cout<<"\n\n Enter Your Choice : ";
+                cin>>ch;
+                switch(ch)
+                {
+                        case 1:
+                        {
+                                cout<<"\n enter the radius for sphere: ";
+                                cin>>r;
+                                cout<<"\n volume of sphere is : "<<volume(r);
+                                break;
+                        }
 
 
-    } //end of switch case
+                        case 2:
+                        {
+                                cout<<"\n enter the radius & height of cylinder : ";
+                                cin>>r>>h;
+                                cout<<"\n volume of cylinder is : "<<volume(r,h);
+                                break;
+                        }
+
+                        case 3:
+                        {
+                                cout<<"\n enter the length, width and height for the cuboid : ";
+                                cin>>l>>w>>h;
+                                cout<<"\n volume of cuboid : "<<volume(l,w,h);
+                                break;
+                        }
+
+                        case 4:
+                                exit(0);
+                        default:
+                                cout<<"\n enter a valid choice ";
+                }
+                
+        }while(ch!=4);
+
+        return 0;
+}
 
 
-
-
-    return 0;
-} //end of main function
